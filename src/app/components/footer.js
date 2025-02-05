@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function Footer() {
+export default function Footer({ className }) {
   const footerRef = useRef(null);
   const [footerVisible, setFooterVisible] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Footer() {
   }, [footerVisible]);
 
   return (
-    <footer ref={footerRef} className="text-[0.8rem] p-4 w-full">
+    <footer ref={footerRef} className={`${className} absolute top-[100%] left-0 text-[0.8rem] p-4 w-full`}>
       © 2023 Cooperative Blue. All rights reserved.
     </footer>
   );

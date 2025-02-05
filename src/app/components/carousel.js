@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Carousel() {
+export default function Carousel({ className }) {
   const images = [
     [
       "/img/swiss/SWISS_XR-18.jpg",
@@ -18,7 +18,7 @@ export default function Carousel() {
       "/img/brachiation/Webflyer.gif",
       "/img/brachiation/Wall_Final.png",
     ],
-    ["/img/rapunzels/motionposter.mp4",],
+    ["/img/rapunzels/motionposter.mp4"],
   ];
 
   // 각 페이지마다 currentIndex를 따로 관리하도록
@@ -29,7 +29,10 @@ export default function Carousel() {
   const prevSlide = (pageIndex) => {
     setCurrentIndices((prev) => {
       const updated = [...prev];
-      updated[pageIndex] = updated[pageIndex] === 0 ? images[pageIndex].length - 1 : updated[pageIndex] - 1;
+      updated[pageIndex] =
+        updated[pageIndex] === 0
+          ? images[pageIndex].length - 1
+          : updated[pageIndex] - 1;
       return updated;
     });
   };
@@ -37,7 +40,10 @@ export default function Carousel() {
   const nextSlide = (pageIndex) => {
     setCurrentIndices((prev) => {
       const updated = [...prev];
-      updated[pageIndex] = updated[pageIndex] === images[pageIndex].length - 1 ? 0 : updated[pageIndex] + 1;
+      updated[pageIndex] =
+        updated[pageIndex] === images[pageIndex].length - 1
+          ? 0
+          : updated[pageIndex] + 1;
       return updated;
     });
   };
@@ -47,22 +53,29 @@ export default function Carousel() {
   }
 
   return (
-    <div 
-    id="carousel" 
-    onMouseEnter={() => {
-      const target = document.getElementById("carousel");
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }}
-      className="scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
+    <div
+      id="carousel"
+      className={`${className} fixed top-0 left-0 scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory`}
+      onMouseEnter={() => {
+        const target = document.getElementById("carousel");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }}
+    >
       {images.map((page, pageIndex) => (
-        <section id={pageIndex} key={pageIndex} className="relative w-full h-screen flex snap-center flex-col">
+        <section
+          id={pageIndex}
+          key={pageIndex}
+          className="relative w-full h-screen flex snap-center flex-col"
+        >
           {page.map((src, index) => (
             <div
               key={index}
               className={`absolute w-full h-full flex items-center justify-center transition-opacity ease-in-out ${
-                index === currentIndices[pageIndex] ? "opacity-100" : "opacity-0"
+                index === currentIndices[pageIndex]
+                  ? "opacity-100"
+                  : "opacity-0"
               }`}
             >
               {src.endsWith(".mp4") ? (
@@ -102,7 +115,6 @@ export default function Carousel() {
               cursor: "url('/img/right.png') 16 16, pointer",
             }}
           ></button>
-
         </section>
       ))}
     </div>
