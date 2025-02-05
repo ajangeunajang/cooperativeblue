@@ -21,7 +21,7 @@ export default function Carousel() {
     ["/img/rapunzels/motionposter.mp4",],
   ];
 
-  // 각 페이지마다 currentIndex를 따로 관리하도록 변경
+  // 각 페이지마다 currentIndex를 따로 관리하도록
   const [currentIndices, setCurrentIndices] = useState(
     new Array(images.length).fill(0)
   );
@@ -59,7 +59,7 @@ export default function Carousel() {
             >
               {src.endsWith(".mp4") ? (
                 <video
-                  className="relative max-w-full max-h-full p-4"
+                  className="absolute top-0 left-1/2 -translate-x-1/2 max-w-full max-h-full p-4"
                   src={src}
                   autoPlay
                   loop
@@ -70,7 +70,7 @@ export default function Carousel() {
                   src={src}
                   fill
                   alt={`swiss-${index}`}
-                  className="object-contain p-4"
+                  className="object-contain object-top p-4"
                 />
               )}
             </div>

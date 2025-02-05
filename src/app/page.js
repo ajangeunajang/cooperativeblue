@@ -20,6 +20,9 @@ export default function Home() {
           className="fixed top-0"
         />
       </a>
+      <footer className="text-[0.8rem] p-4 w-full">
+        © 2023 Cooperative Blue. All rights reserved.
+      </footer>
       <Nav />
       <NavMobile />
     </div>
