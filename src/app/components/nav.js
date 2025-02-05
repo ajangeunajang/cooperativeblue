@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <ol className="hidden md:flex w-full fixed text-[0.8rem]">
-      <li className="fixed top-0 left-20">
+    <ol className="hidden lg:flex w-full fixed text-[0.8rem]">
+      <li className="fixed top-0 lg:left-4 xl:left-20">
         <span className="pl-10 border-l-[2px] border-[#00386C]">Contact</span>
         <div>
           <a href="mailto:cooperativeblue@gmail.com" className="block">
@@ -21,7 +21,7 @@ export default function Nav() {
             협조적 블루는 그래픽 디자인과 웹 퍼블리싱을 합니다. 다양한 매체를 통해 가치있는
             이야기를 전달합니다.
           </p>
-          <p>
+          <p className="leading-tight">
           cooperative Blue specializes in graphic design and web publishing. They convey valuable stories through various media.
           </p>
         </div>

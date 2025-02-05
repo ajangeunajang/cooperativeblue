@@ -49,7 +49,7 @@ export default function Carousel() {
   return (
     <div className="scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
       {images.map((page, pageIndex) => (
-        <section key={pageIndex} className="relative w-full h-screen flex snap-center flex-col">
+        <section id={pageIndex} key={pageIndex} className="relative w-full h-screen flex snap-center flex-col">
           {page.map((src, index) => (
             <div
               key={index}

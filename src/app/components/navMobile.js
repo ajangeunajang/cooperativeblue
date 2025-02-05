@@ -11,7 +11,7 @@ export default function NavMobile() {
   };
 
   return (
-    <ol className="md:hidden w-screen h-screen fixed text-[0.8rem]">
+    <ol className="lg:hidden w-screen h-screen fixed text-[0.8rem]">
       <li className="fixed bottom-0 pl-4">
         <div>
           {active === "contact" && (
@@ -52,7 +52,7 @@ export default function NavMobile() {
           About
         </button>
       </li>
-      <li className="fixed bottom-0 right-4 z-4">
+      <li className="fixed bottom-0 right-0 pr-4 z-4">
         <Link href='/index' className="pl-8 border-l-[1.5px] border-[#00386C]">Index</Link>
       </li>
     </ol>

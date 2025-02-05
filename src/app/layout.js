@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body
-        className={`break-keep leading-snug font-[500] font-sans font-pretendard antialiased`}
+        className={`scrollbar-hidden break-keep leading-snug font-[500] font-sans font-pretendard antialiased`}
       >
         {/* 앞에 있는 서체 sans 가 적용됨.. */}
         {children}
