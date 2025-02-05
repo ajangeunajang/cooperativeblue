@@ -2,6 +2,7 @@ import Nav from "./components/nav";
 import NavMobile from "./components/navMobile";
 import Carousel from "./components/carousel";
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -9,9 +10,7 @@ export default function Home() {
       {/* 캐러셀 섹션 */}       
       <Carousel/>
       <Header />
-      <footer className="text-[0.8rem] p-4 w-full">
-        © 2023 Cooperative Blue. All rights reserved.
-      </footer>
+      <Footer />
       <Nav />
       <NavMobile />
     </div>

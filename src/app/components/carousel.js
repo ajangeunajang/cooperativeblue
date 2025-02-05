@@ -47,7 +47,15 @@ export default function Carousel() {
   }
 
   return (
-    <div className="scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
+    <div 
+    id="carousel" 
+    onMouseEnter={() => {
+      const target = document.getElementById("carousel");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }}
+      className="scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
       {images.map((page, pageIndex) => (
         <section id={pageIndex} key={pageIndex} className="relative w-full h-screen flex snap-center flex-col">
           {page.map((src, index) => (
