@@ -16,7 +16,7 @@ export const metadata = {
     description: "Design + Graphic + Web",
     images: [
       {
-        url: "img/ogimg.png", // 실제 이미지 URL로 변경
+        url: "/img/ogimg.png", // 실제 이미지 URL로 변경
         width: 600,
         height: 315,
         alt: "Graphic Design Studio Based in Seoul",

@@ -61,9 +61,10 @@ export default function Carousel() {
                 <video
                   className="absolute top-0 left-1/2 -translate-x-1/2 max-w-full max-h-full p-4"
                   src={src}
-                  autoPlay
+                  
                   loop
                   muted
+                  playsInline
                 ></video>
               ) : (
                 <Image
