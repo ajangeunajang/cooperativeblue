@@ -18,6 +18,7 @@ export default {
     },
   },
   plugins: [
+    require("tailwind-scrollbar-hide"), // ✅ 스크롤바 숨기는 플러그인 추가
     function ({ addBase }) {
       addBase({
         '@font-face': {
@@ -28,7 +29,7 @@ export default {
         },
         '@font-face': {
           fontFamily: 'Inter',
-          src: 'url(/fonts/Inter-VariableFont_opsz,wght.woff2) format("woff2")',  // Inter 폰트 파일 경로 지정
+          src: 'url(/fonts/Inter-VariableFont_opsz,wght.woff2) format("woff2")',
           fontWeight: 'normal',
           fontStyle: 'normal',
         },

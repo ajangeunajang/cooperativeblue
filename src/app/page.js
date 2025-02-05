@@ -5,7 +5,7 @@ import Carousel from "./components/carousel";
 
 export default function Home() {
   return (
-    <div className="items-center justify-items-center">
+    <div className="scrollbar-hidden items-center justify-items-center">
       {/* 캐러셀 섹션 */}       
           <Carousel/>
       

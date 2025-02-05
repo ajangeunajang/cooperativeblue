@@ -15,9 +15,10 @@ export default function Carousel() {
     ],
     [
       "/img/brachiation/brachiation_poster.png",
+      "/img/brachiation/Webflyer.gif",
       "/img/brachiation/Wall_Final.png",
     ],
-    ["/img/rapunzels/motionposter.mp4"],
+    ["/img/rapunzels/motionposter.mp4",],
   ];
 
   // 각 페이지마다 currentIndex를 따로 관리하도록 변경
@@ -46,7 +47,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-screen h-auto overflow-x-hidden overflow-y-scroll snap-y snap-mandatory">
+    <div className="scrollbar-hidden relative w-screen h-screen scroll-smooth overflow-x-hidden overflow-y-auto snap-y snap-mandatory">
       {images.map((page, pageIndex) => (
         <section key={pageIndex} className="relative w-full h-screen flex snap-start flex-col">
           {page.map((src, index) => (
