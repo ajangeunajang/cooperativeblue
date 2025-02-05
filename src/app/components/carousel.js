@@ -64,7 +64,9 @@ export default function Carousel() {
                   autoPlay
                   loop
                   muted
+                  disablePictureInPicture
                   playsInline
+                  webkit-playsinline
                 ></video>
               ) : (
                 <Image
