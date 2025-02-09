@@ -24,6 +24,7 @@ export default function Header() {
         height={100}
         alt="Logo"
         className="fixed top-0"
+        priority
       />
     </a>
   );
