@@ -15,10 +15,12 @@ export default function Carousel({ className }) {
     ],
     [
       "/img/brachiation/brachiation_poster.png",
-      "/img/brachiation/Webflyer.gif",
+      
       "/img/brachiation/Wall_Final.png",
     ],
+    ["/img/brachiation/Webflyer.gif",],
     ["/img/rapunzels/motionposter.mp4"],
+    ["/img/rapunzels/insta.png", "/img/rapunzels/funding.mp4",],
 
     ["/img/haters/포토콜.jpg", "/img/haters/webflyer.gif"],
     [
@@ -39,6 +41,7 @@ export default function Carousel({ className }) {
       "/img/kartsdesign/identity10.jpg",
       "/img/kartsdesign/2 mobile_fin.mp4",
     ],
+    ["/img/kartsdesign/kartscatalog.png"],
     [
       "/img/newskarts/1.png",
       "/img/newskarts/2.png",
