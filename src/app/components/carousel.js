@@ -15,12 +15,11 @@ export default function Carousel({ className }) {
     ],
     [
       "/img/brachiation/brachiation_poster.png",
-      
       "/img/brachiation/Wall_Final.png",
     ],
-    ["/img/brachiation/Webflyer.gif",],
-    ["/img/rapunzels/motionposter.mp4"],
-    ["/img/rapunzels/insta.png", "/img/rapunzels/funding.mp4",],
+    ["/img/brachiation/Webflyer.gif"],
+    ["/img/rapunzels/motionposter.mp4", "/img/rapunzels/photocall.jpg"],
+    ["/img/rapunzels/insta.png", "/img/rapunzels/funding.mp4"],
 
     ["/img/haters/포토콜.jpg", "/img/haters/webflyer.gif"],
     [
@@ -43,15 +42,6 @@ export default function Carousel({ className }) {
     ],
     ["/img/kartsdesign/kartscatalog.png"],
     [
-      "/img/newskarts/1.png",
-      "/img/newskarts/2.png",
-      "/img/newskarts/3.png",
-      "/img/newskarts/4.png",
-      "/img/newskarts/5.png",
-      "/img/newskarts/6.png",
-      "/img/newskarts/7.png",
-    ],
-    [
       "/img/blues/231014A7403614.jpg",
       "/img/blues/230923A7402425.jpg",
       "/img/blues/img001.jpg",
@@ -64,6 +54,15 @@ export default function Carousel({ className }) {
       "/img/blues/img023.jpg",
     ],
     [
+      "/img/newskarts/1.png",
+      "/img/newskarts/2.png",
+      "/img/newskarts/3.png",
+      "/img/newskarts/4.png",
+      "/img/newskarts/5.png",
+      "/img/newskarts/6.png",
+      "/img/newskarts/7.png",
+    ],
+    [
       "/img/spacefigure/1.png",
       "/img/spacefigure/2.png",
       "/img/spacefigure/3.png",
@@ -71,7 +70,16 @@ export default function Carousel({ className }) {
       "/img/spacefigure/5.png",
       "/img/spacefigure/6.png",
     ],
+    ["/img/1010/poster1.png", "/img/1010/poster2.png", "/img/1010/1010.jpg",],
+    ["/img/1010/card.png",],
+    ["/img/fd/find/8.jpg", "/img/fd/find/8-1.jpg",],
+    ["/img/fd/find/find_22.png", "/img/fd/find/find_24.png", "/img/fd/find/find_82.png"],
+    ["/img/fd/factory.mp4"],
+    ["/img/fd/yes24/93/01.png", "/img/fd/yes24/93/15.png", "/img/fd/yes24/93/16.png", "/img/fd/yes24/93/20.png", "/img/fd/yes24/93/21.png", "/img/fd/yes24/93/14.png",],
+    ["/img/fd/tomato.mp4"],
+    ["/img/fd/yes24/92/01.png", "/img/fd/yes24/92/10.png", "/img/fd/yes24/92/15.png", "/img/fd/yes24/92/19.png", "/img/fd/yes24/92/20.png", "/img/fd/yes24/92/21.png", "/img/fd/yes24/92/23.png",],
     ["/img/100films100posters/2020-37.jpg"],
+
   ];
 
   // 각 페이지마다 currentIndex를 따로 관리하도록
