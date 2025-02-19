@@ -18,8 +18,9 @@ export default function Nav() {
         <span className="pl-10 border-l-[2px] border-[#00386C]">About</span>
         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
           <p>
-            협조적 블루는 그래픽 디자인과 웹 퍼블리싱을 합니다. 다양한 매체를 통해 가치있는
-            이야기를 전달합니다.
+            Graphic + Web + Design
+            {/* 협조적 블루는 그래픽 디자인과 웹 퍼블리싱을 합니다. 다양한 매체를 통해 가치있는
+            이야기를 전달합니다. */}
           </p>
           <p className="leading-tight">
           cooperative Blue specializes in graphic design and web publishing. They convey valuable stories through various media.
