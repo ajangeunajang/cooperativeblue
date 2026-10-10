@@ -4,7 +4,7 @@ import Contact from "./contact";
 
 export default function Nav() {
   return (
-    <ol className="hidden lg:flex w-full fixed text-[0.8rem]">
+    <ol className="hidden lg:flex w-full fixed z-20 text-[0.8rem]">
       <li className="fixed top-0 lg:left-4 xl:left-20 z-20">
         <Contact />
       </li>

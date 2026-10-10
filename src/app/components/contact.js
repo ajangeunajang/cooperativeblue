@@ -14,7 +14,7 @@ export default function Contact() {
       >
         Contact
       </button>
-      {open && <ContactForm className="relative z-20 w-72 mt-2 p-3 bg-[#e9e9e9]" />}
+      {open && <ContactForm className="relative z-20 w-72 mt-2 p-3 bg-[#e9e9e9]/50 backdrop-blur-md" />}
     </>
   );
 }

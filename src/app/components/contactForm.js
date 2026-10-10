@@ -51,7 +51,7 @@ export default function ContactForm({ className = "" }) {
       <input name="name" required placeholder="Name *" className={inputClass} />
       <input name="company" placeholder="Company" className={inputClass} />
       <input name="email" type="email" required placeholder="Email *" className={inputClass} />
-      <input name="budget" placeholder="Budget" className={inputClass} />
+      <input name="budget" required placeholder="Budget *" className={inputClass} />
       <input name="schedule" placeholder="Timeline" className={inputClass} />
       <input name="link" type="url" placeholder="Reference link (Drive, WeTransfer…)" className={inputClass} />
       <textarea name="message" required rows={4} placeholder="Message *" className={`${inputClass} resize-none`} />
@@ -60,7 +60,7 @@ export default function ContactForm({ className = "" }) {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="self-start mt-2 pl-2 border-l border-[#00386C] disabled:opacity-50"
+        className="self-start mt-2 disabled:opacity-50"
       >
         <span className="font-[Inter]">↗</span> {status === "sending" ? "Sending…" : "Send"}
       </button>

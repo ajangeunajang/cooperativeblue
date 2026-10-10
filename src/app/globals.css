@@ -24,6 +24,14 @@ body {
   background: #fff;
 }
 
+/* 브라우저 자동완성 시 생기는 파란/노란 배경 제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #00386C;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 .cursor-arrow-left {
   cursor: url('/img/left.png') 10 8, pointer;
   cursor: image-set(url('/img/left.png') 1x, url('/img/left@2x.png') 2x) 10 8, pointer;
