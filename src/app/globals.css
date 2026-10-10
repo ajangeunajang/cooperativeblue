@@ -29,6 +29,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: #00386C;
+  /* 배경을 글자 모양으로만 잘라 글자색에 가려지게 함 (폼을 숨겼다 다시 열어도 유지) */
+  -webkit-background-clip: text;
+  background-clip: text;
   transition: background-color 9999s ease-in-out 0s;
 }
 

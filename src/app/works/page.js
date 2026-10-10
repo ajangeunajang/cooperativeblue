@@ -3,10 +3,10 @@ import Link from "next/link";
 import { works } from "../data/works";
 
 export const metadata = {
-  title: "Index — (cooperative) Blue",
+  title: "Works — (cooperative) Blue",
 };
 
-export default function IndexPage() {
+export default function WorksPage() {
   // 프로젝트마다 첫 이미지(대표 이미지)만, 누르면 메인 화면의 해당 프로젝트로 이동
   const items = works.map((page, pageIndex) => ({ src: page[0], pageIndex }));
 

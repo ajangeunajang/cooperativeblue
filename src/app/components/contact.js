@@ -14,7 +14,10 @@ export default function Contact() {
       >
         Contact
       </button>
-      {open && <ContactForm className="relative z-20 w-72 mt-2 p-3 bg-[#e9e9e9]/50 backdrop-blur-md" />}
+      {/* 닫아도 입력 내용이 남도록 숨기기만 함 */}
+      <div className={open ? "" : "hidden"}>
+        <ContactForm draggable open={open} className="relative z-20 w-72 mt-2 p-3 bg-[#e9e9e9]/50 backdrop-blur-md" />
+      </div>
     </>
   );
 }

@@ -16,9 +16,10 @@ export default function NavMobile() {
     <ol className="lg:hidden w-screen h-screen fixed z-20 pointer-events-none text-[0.8rem]">
       <li className="fixed bottom-0 pointer-events-auto pl-4 z-20">
         <div>
-          {active === "contact" && (
+          {/* 닫아도 입력 내용이 남도록 숨기기만 함 */}
+          <div className={active === "contact" ? "" : "hidden"}>
             <ContactForm className="fixed inset-x-0 top-0 bottom-[1lh] overflow-y-auto p-4 bg-[#e9e9e9]/50 backdrop-blur-md" />
-          )}
+          </div>
           <button
             onClick={() => toggleContent("contact")}
             className="z-2 pl-8 border-l border-[#00386C] focus:outline-none"
@@ -51,7 +52,7 @@ export default function NavMobile() {
         </button>
       </li>
       <li className="fixed bottom-0 pointer-events-auto right-0 pr-4 z-4">
-        <Link href='/works' className="pl-8 border-l border-[#00386C]">Index</Link>
+        <Link href='/works' className="pl-8 border-l border-[#00386C]">Works</Link>
       </li>
     </ol>
   );
