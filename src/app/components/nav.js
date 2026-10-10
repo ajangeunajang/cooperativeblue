@@ -17,12 +17,12 @@ export default function Nav() {
           {/* <p className="leading-tight">
           cooperative Blue specializes in graphic design and web publishing. They convey valuable stories through various media.
           </p> */}
-          <div className="mt-[1lh]">
+          <div className="mt-[1lh] whitespace-nowrap">
             <a href="mailto:cooperativeblue@gmail.com" className="block">
-              cooperativeblue@gmail.com
+              <span className="font-[Inter]">↗</span> cooperativeblue@gmail.com
             </a>
             <Link href="https://www.instagram.com/ajangeunajang/" passHref>
-              instagram
+              <span className="font-[Inter]">↗</span> instagram
             </Link>
           </div>
         </div>

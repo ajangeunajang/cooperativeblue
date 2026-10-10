@@ -25,20 +25,13 @@ export default function NavMobile() {
       <li className="fixed bottom-0 left-[35%] z-3">
         {active === "about" && (
           <div className="opacity-100 transition-opacity duration-500">
-            <p>
-              협조적 블루는 그래픽 디자인과 웹 퍼블리싱을 합니다. 다양한 매체를
-              통해 가치있는 이야기를 전달합니다.
-            </p>
-            <p>
-              cooperative Blue specializes in graphic design and web publishing.
-              They convey valuable stories through various media.
-            </p>
-            <div className="mt-[1lh]">
+            <p>Graphic + Web + Design</p>
+            <div className="mt-[1lh] whitespace-nowrap">
               <a href="mailto:cooperativeblue@gmail.com" className="block">
-                cooperativeblue@gmail.com
+                <span className="font-[Inter]">↗</span> cooperativeblue@gmail.com
               </a>
               <Link href="https://www.instagram.com/ajangeunajang/" passHref>
-                instagram
+                <span className="font-[Inter]">↗</span> instagram
               </Link>
             </div>
           </div>
