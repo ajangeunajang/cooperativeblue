@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import CopyEmail from "./copyEmail";
+import ContactForm from "./contactForm";
 
 export default function NavMobile() {
   const [active, setActive] = useState(null);
@@ -13,8 +14,11 @@ export default function NavMobile() {
 
   return (
     <ol className="lg:hidden w-screen h-screen fixed text-[0.8rem]">
-      <li className="fixed bottom-0 pl-4">
+      <li className="fixed bottom-0 pl-4 z-20">
         <div>
+          {active === "contact" && (
+            <ContactForm className="w-[calc(100vw-2rem)] mb-2 p-3 bg-[#e9e9e9]" />
+          )}
           <button
             onClick={() => toggleContent("contact")}
             className="z-2 pl-8 border-l border-[#00386C] focus:outline-none"

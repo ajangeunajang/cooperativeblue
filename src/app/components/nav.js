@@ -1,11 +1,12 @@
 import Link from "next/link";
 import CopyEmail from "./copyEmail";
+import Contact from "./contact";
 
 export default function Nav() {
   return (
     <ol className="hidden lg:flex w-full fixed text-[0.8rem]">
-      <li className="fixed top-0 lg:left-4 xl:left-20">
-        <span className="inline-block pl-10 border-l border-[#00386C]">Contact</span>
+      <li className="fixed top-0 lg:left-4 xl:left-20 z-20">
+        <Contact />
       </li>
       <li className="group fixed top-0 left-[20%] w-1/6">
         <span className="inline-block pl-10 border-l border-[#00386C]">About</span>
