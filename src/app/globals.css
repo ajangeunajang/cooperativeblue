@@ -20,6 +20,17 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
+/* 국문: Noto Serif KR을 장평 80%·자간 -4%로 줄인 서체 (scripts/build-condensed-kr-font.py로 생성)
+   한글 범위에만 적용되어 한글이 있을 때만 내려받음 */
+@font-face {
+  font-family: "Noto Serif KR Condensed";
+  src: url("/fonts/NotoSerifKR-Condensed.woff2") format("woff2");
+  font-weight: 100 900; /* 굵기 하나(400)만 있음: 어떤 굵기로 요청해도 이 파일 사용 */
+  font-display: swap;
+  size-adjust: 95%; /* 국문만 영문보다 약간 작게 */
+  unicode-range: U+3000-3003, U+3008-3011, U+3131-318E, U+AC00-D7A3;
+}
+
 ::selection {
   background: #fff;
 }

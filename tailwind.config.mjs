@@ -12,7 +12,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['var(--font-xanh-mono)', 'var(--font-noto-serif-kr)', 'serif'],
+        sans: ['var(--font-xanh-mono)', '"Noto Serif KR Condensed"', 'var(--font-noto-serif-kr)', 'serif'],
         pretendard: ['Pretendard', 'sans-serif'],
       },
     },
