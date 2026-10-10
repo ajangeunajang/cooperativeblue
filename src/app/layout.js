@@ -17,6 +17,7 @@ export const viewport = {
 };
 
 export const metadata = {
+  metadataBase: new URL("https://www.cooperativeblue.kr"),
   title: "(cooperative) Blue",
   description: "Design + Graphic + Web",
   keywords: ["장은아", "전시디자인", "전시웹사이트", "전시", "그래픽", "웹개발", "웹", "그래픽디자이너", "그래픽디자인", "공연", "XR", "미디어아트", "AI", "디자인", "도록 디자인", "리플렛디자인", "한국예술종합학교", "디자이너", "협조적블루", "cooperative", "blue", "graphic", "design", "euna", "한예종", "현대무용", "공연", "씨어터", "무용", "퍼포먼스", "시각예술"],
@@ -25,10 +26,10 @@ export const metadata = {
     description: "Design + Graphic + Web",
     images: [
       {
-        url: "/img/ogimg.png", // 실제 이미지 URL로 변경
-        width: 600,
-        height: 315,
-        alt: "Graphic Design Studio Based in Seoul",
+        url: "/img/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "(cooperative) Blue — Graphic & Web Design Studio based in Seoul & Daejeon",
       },
     ],
   },
