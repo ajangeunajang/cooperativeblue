@@ -53,7 +53,7 @@ export default function ContactForm({ className = "" }) {
       <input name="email" type="email" required placeholder="Email *" className={inputClass} />
       <input name="budget" required placeholder="Budget *" className={inputClass} />
       <input name="schedule" placeholder="Timeline" className={inputClass} />
-      <input name="link" type="url" placeholder="Reference link (Drive, WeTransfer…)" className={inputClass} />
+      <input name="link" type="url" placeholder="Reference link (Drive, Dropbox…)" className={inputClass} />
       <textarea name="message" required rows={4} placeholder="Message *" className={`${inputClass} resize-none`} />
       {/* 스팸 방지용 숨김 필드 */}
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
