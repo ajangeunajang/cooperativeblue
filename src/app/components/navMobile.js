@@ -51,7 +51,7 @@ export default function NavMobile() {
         </button>
       </li>
       <li className="fixed bottom-0 pointer-events-auto right-0 pr-4 z-4">
-        <Link href='/index' className="pl-8 border-l border-[#00386C]">Index</Link>
+        <Link href='/works' className="pl-8 border-l border-[#00386C]">Index</Link>
       </li>
     </ol>
   );

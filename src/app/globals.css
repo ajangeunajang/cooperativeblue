@@ -32,6 +32,17 @@ input:-webkit-autofill:focus {
   transition: background-color 9999s ease-in-out 0s;
 }
 
+/* 문의 폼: 열려 있는 동안 1분에 1도씩 시계 방향 회전 (360도 = 360분) */
+.slow-spin {
+  animation: slow-spin 21600s linear infinite;
+}
+
+@keyframes slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .cursor-arrow-left {
   cursor: url('/img/left.png') 10 8, pointer;
   cursor: image-set(url('/img/left.png') 1x, url('/img/left@2x.png') 2x) 10 8, pointer;

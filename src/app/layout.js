@@ -1,6 +1,9 @@
 import { Xanh_Mono } from "next/font/google";
 
 import "./globals.css";
+import Header from "./components/header";
+import Nav from "./components/nav";
+import NavMobile from "./components/navMobile";
 
 const xanhMono = Xanh_Mono({
   variable: "--font-xanh-mono",
@@ -43,6 +46,10 @@ export default function RootLayout({ children }) {
       >
         {/* 앞에 있는 서체 sans 가 적용됨.. */}
         {children}
+        {/* 페이지를 이동해도 유지되도록 공통 레이아웃에 둠 (Contact 폼 상태 포함) */}
+        <Header />
+        <Nav />
+        <NavMobile />
       </body>
     </html>
   );

@@ -39,7 +39,7 @@ export default function ContactForm({ className = "" }) {
 
   if (status === "sent") {
     return (
-      <div className={className}>
+      <div className={`slow-spin ${className}`}>
         <p>
           Thank you.
           <br />
@@ -53,7 +53,7 @@ export default function ContactForm({ className = "" }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className={`flex flex-col gap-2 ${className}`}>
+    <form onSubmit={onSubmit} className={`slow-spin flex flex-col gap-2 ${className}`}>
       <p className="mb-2">Project Inquiry</p>
       <input name="name" required placeholder="Name *" className={inputClass} />
       <input name="company" placeholder="Company" className={inputClass} />

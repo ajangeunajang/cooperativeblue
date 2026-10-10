@@ -30,7 +30,7 @@ export default function Nav() {
         </div>
       </li>
       <li className="fixed top-0 right-4">
-        <Link href='/index' className="inline-block pl-10 border-l border-[#00386C]">Index</Link>
+        <Link href='/works' className="inline-block pl-10 border-l border-[#00386C]">Index</Link>
       </li>
     </ol>
   );
