@@ -14,16 +14,6 @@ export default function NavMobile() {
     <ol className="lg:hidden w-screen h-screen fixed text-[0.8rem]">
       <li className="fixed bottom-0 pl-4">
         <div>
-          {active === "contact" && (
-            <div className="opacity-100 transition-opacity duration-500">
-              <a href="mailto:cooperativeblue@gmail.com" className="block">
-                cooperativeblue@gmail.com
-              </a>
-              <Link href="https://www.instagram.com/ajangeunajang/" passHref>
-                instagram
-              </Link>
-            </div>
-          )}
           <button
             onClick={() => toggleContent("contact")}
             className="z-2 pl-8 border-l border-[#00386C] focus:outline-none"
@@ -43,6 +33,14 @@ export default function NavMobile() {
               cooperative Blue specializes in graphic design and web publishing.
               They convey valuable stories through various media.
             </p>
+            <div className="mt-[1lh]">
+              <a href="mailto:cooperativeblue@gmail.com" className="block">
+                cooperativeblue@gmail.com
+              </a>
+              <Link href="https://www.instagram.com/ajangeunajang/" passHref>
+                instagram
+              </Link>
+            </div>
           </div>
         )}
         <button

@@ -5,14 +5,6 @@ export default function Nav() {
     <ol className="hidden lg:flex w-full fixed text-[0.8rem]">
       <li className="fixed top-0 lg:left-4 xl:left-20">
         <span className="inline-block pl-10 border-l border-[#00386C]">Contact</span>
-        <div>
-          <a href="mailto:cooperativeblue@gmail.com" className="block">
-            cooperativeblue@gmail.com
-          </a>
-          <Link href="https://www.instagram.com/ajangeunajang/" passHref>
-            instagram
-          </Link>
-        </div>
       </li>
       <li className="group fixed top-0 left-[20%] w-1/6">
         <span className="inline-block pl-10 border-l border-[#00386C]">About</span>
@@ -25,6 +17,14 @@ export default function Nav() {
           {/* <p className="leading-tight">
           cooperative Blue specializes in graphic design and web publishing. They convey valuable stories through various media.
           </p> */}
+          <div className="mt-[1lh]">
+            <a href="mailto:cooperativeblue@gmail.com" className="block">
+              cooperativeblue@gmail.com
+            </a>
+            <Link href="https://www.instagram.com/ajangeunajang/" passHref>
+              instagram
+            </Link>
+          </div>
         </div>
       </li>
       <li className="fixed top-0 right-4">
