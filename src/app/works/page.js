@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../components/footer";
 import { works } from "../data/works";
 
 export const metadata = {
@@ -11,10 +12,10 @@ export default function WorksPage() {
   const items = works.map((page, pageIndex) => ({ src: page[0], pageIndex }));
 
   return (
-    <main className="min-h-screen px-4 pt-16 pb-16 lg:pb-8">
-      <ul className="columns-2 md:columns-3 lg:columns-5 gap-2 lg:gap-4">
+    <main className="min-h-screen px-4 pt-16 lg:pt-20 pb-16 lg:pb-10">
+      <ul className="columns-2 md:columns-3 lg:columns-4 gap-10 lg:gap-32">
         {items.map(({ src, pageIndex }) => (
-          <li key={src} className="break-inside-avoid mb-2 lg:mb-4">
+          <li key={src} className="break-inside-avoid mb-10 lg:mb-32">
             <Link href={`/#${pageIndex}`} className="block">
               {src.endsWith(".mp4") ? (
                 <video
@@ -34,7 +35,7 @@ export default function WorksPage() {
                   width={0}
                   height={0}
                   alt=""
-                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                   className="w-full h-auto"
                 />
               )}
@@ -42,6 +43,8 @@ export default function WorksPage() {
           </li>
         ))}
       </ul>
+
+      <Footer inline className="mt-10" />
     </main>
   );
 }

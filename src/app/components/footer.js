@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function Footer({ className }) {
+// inline: Works처럼 일반 페이지 맨 아래에 두는 경우 (메인의 자동 스크롤 없음)
+export default function Footer({ className = "", inline = false }) {
   const footerRef = useRef(null);
   const [footerVisible, setFooterVisible] = useState(false);
 
   useEffect(() => {
+    if (inline) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -24,7 +26,7 @@ export default function Footer({ className }) {
         observer.unobserve(footerRef.current);
       }
     };
-  }, []);
+  }, [inline]);
 
   useEffect(() => {
     if (footerVisible) {
@@ -41,7 +43,10 @@ export default function Footer({ className }) {
   }, [footerVisible]);
 
   return (
-    <footer ref={footerRef} className={`${className} absolute top-[100%] left-0 text-[0.8rem] p-4 w-full`}>
+    <footer
+      ref={footerRef}
+      className={`${className} ${inline ? "" : "absolute top-[100%] left-0 p-4"} text-[0.8rem] w-full`}
+    >
       © 2023 Cooperative Blue. All rights reserved.
     </footer>
   );
