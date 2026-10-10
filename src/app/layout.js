@@ -9,6 +9,13 @@ const xanhMono = Xanh_Mono({
   subsets: ["latin"],
 });
 
+// 입력칸 포커스 시 iOS 자동 확대 방지 (iOS는 손가락 확대는 계속 허용)
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata = {
   title: "(cooperative) Blue",
   description: "Design + Graphic + Web",

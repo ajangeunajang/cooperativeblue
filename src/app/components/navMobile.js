@@ -17,7 +17,7 @@ export default function NavMobile() {
       <li className="fixed bottom-0 pointer-events-auto pl-4 z-20">
         <div>
           {active === "contact" && (
-            <ContactForm className="w-[calc(100vw-2rem)] mb-2 p-3 bg-[#e9e9e9]/50 backdrop-blur-md" />
+            <ContactForm className="fixed inset-x-0 top-0 bottom-[1lh] overflow-y-auto p-4 bg-[#e9e9e9]/50 backdrop-blur-md" />
           )}
           <button
             onClick={() => toggleContent("contact")}
