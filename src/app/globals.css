@@ -24,6 +24,16 @@ body {
   background: #fff;
 }
 
+.cursor-arrow-left {
+  cursor: url('/img/left.png') 10 8, pointer;
+  cursor: image-set(url('/img/left.png') 1x, url('/img/left@2x.png') 2x) 10 8, pointer;
+}
+
+.cursor-arrow-right {
+  cursor: url('/img/right.png') 10 8, pointer;
+  cursor: image-set(url('/img/right.png') 1x, url('/img/right@2x.png') 2x) 10 8, pointer;
+}
+
 @layer utilities {
   .scrollbar-hidden {
     -ms-overflow-style: none;  /* IE, Edge */

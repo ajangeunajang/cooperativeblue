@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import CopyEmail from "./copyEmail";
 
 export default function NavMobile() {
   const [active, setActive] = useState(null);
@@ -25,11 +26,13 @@ export default function NavMobile() {
       <li className="fixed bottom-0 left-[35%] z-3">
         {active === "about" && (
           <div className="opacity-100 transition-opacity duration-500">
-            <p>Graphic + Web + Design</p>
+            <p className="whitespace-nowrap">
+              Graphic + Web + Design
+              <br />
+              based in Seoul and Daejeon, KR
+            </p>
             <div className="mt-[1lh] whitespace-nowrap">
-              <a href="mailto:cooperativeblue@gmail.com" className="block">
-                <span className="font-[Inter]">↗</span> cooperativeblue@gmail.com
-              </a>
+              <CopyEmail />
               <Link href="https://www.instagram.com/ajangeunajang/" passHref>
                 <span className="font-[Inter]">↗</span> instagram
               </Link>

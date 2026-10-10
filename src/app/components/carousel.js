@@ -164,17 +164,11 @@ export default function Carousel({ className }) {
           {/* 이전/다음 버튼 */}
           <button
             onClick={() => prevSlide(pageIndex)}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-[45vw] h-[50vh]"
-            style={{
-              cursor: "url('/img/left.png') 16 16, pointer",
-            }}
+            className="cursor-arrow-left absolute left-0 top-1/2 transform -translate-y-1/2 z-10 w-[45vw] h-[50vh]"
           ></button>
           <button
             onClick={() => nextSlide(pageIndex)}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-[45vw] h-[50vh]"
-            style={{
-              cursor: "url('/img/right.png') 16 16, pointer",
-            }}
+            className="cursor-arrow-right absolute right-0 top-1/2 transform -translate-y-1/2 z-10 w-[45vw] h-[50vh]"
           ></button>
         </section>
       ))}
