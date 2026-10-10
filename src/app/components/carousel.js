@@ -148,7 +148,7 @@ export default function Carousel({ className }) {
                   muted
                   disablePictureInPicture
                   playsInline
-                  webkit-playsinline
+                  webkit-playsinline="true"
                 ></video>
               ) : (
                 <Image

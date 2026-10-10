@@ -26,7 +26,7 @@ export default function NavMobile() {
           )}
           <button
             onClick={() => toggleContent("contact")}
-            className="z-2 pl-8 border-l-[1.5px] border-[#00386C] focus:outline-none"
+            className="z-2 pl-8 border-l border-[#00386C] focus:outline-none"
           >
             Contact
           </button>
@@ -47,13 +47,13 @@ export default function NavMobile() {
         )}
         <button
           onClick={() => toggleContent("about")}
-          className="pl-8 border-l-[1.5px] border-[#00386C] focus:outline-none"
+          className="pl-8 border-l border-[#00386C] focus:outline-none"
         >
           About
         </button>
       </li>
       <li className="fixed bottom-0 right-0 pr-4 z-4">
-        <Link href='/index' className="pl-8 border-l-[1.5px] border-[#00386C]">Index</Link>
+        <Link href='/index' className="pl-8 border-l border-[#00386C]">Index</Link>
       </li>
     </ol>
   );

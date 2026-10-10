@@ -1,9 +1,11 @@
-import { Oswald } from "next/font/google";
+import { Xanh_Mono } from "next/font/google";
 
 import "./globals.css";
 
-const inter = Oswald({
-  variable: "--font-inter",
+const xanhMono = Xanh_Mono({
+  variable: "--font-xanh-mono",
+  weight: "400",
+  style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
@@ -27,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={xanhMono.variable}>
       <body
         className={`text-[#00386C] scrollbar-hidden break-keep leading-snug font-[500] font-sans font-pretendard antialiased`}
       >

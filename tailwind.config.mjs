@@ -12,7 +12,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], 
+        sans: ['var(--font-xanh-mono)', 'sans-serif'],
         pretendard: ['Pretendard', 'sans-serif'],
       },
     },
