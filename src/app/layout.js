@@ -1,4 +1,4 @@
-import { Xanh_Mono } from "next/font/google";
+import { Noto_Serif_KR, Xanh_Mono } from "next/font/google";
 
 import "./globals.css";
 import Header from "./components/header";
@@ -10,6 +10,13 @@ const xanhMono = Xanh_Mono({
   weight: "400",
   style: ["normal", "italic"],
   subsets: ["latin"],
+});
+
+// 국문 기본 서체 (Xanh Mono에 한글이 없어 한글은 이 서체로 표시)
+const notoSerifKR = Noto_Serif_KR({
+  variable: "--font-noto-serif-kr",
+  weight: "variable",
+  preload: false, // 한글은 글자 범위별로 나눠 필요한 것만 받음
 });
 
 // 입력칸 포커스 시 iOS 자동 확대 방지 (iOS는 손가락 확대는 계속 허용)
@@ -40,7 +47,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className={xanhMono.variable}>
+    <html lang="ko" className={`${xanhMono.variable} ${notoSerifKR.variable}`}>
       <body
         className={`text-[#00386C] scrollbar-hidden break-keep leading-snug font-[500] font-sans font-pretendard antialiased`}
       >
