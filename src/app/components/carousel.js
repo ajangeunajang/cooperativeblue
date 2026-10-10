@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { works } from "../data/works";
+import LazyVideo from "./lazyVideo";
 
 export default function Carousel({ className }) {
   const images = works;
@@ -64,16 +65,11 @@ export default function Carousel({ className }) {
               }`}
             >
               {src.endsWith(".mp4") ? (
-                <video
+                <LazyVideo
                   className="absolute top-0 left-1/2 -translate-x-1/2 max-w-full max-h-full p-4"
                   src={src}
-                  autoPlay
-                  loop
-                  muted
-                  disablePictureInPicture
-                  playsInline
-                  webkit-playsinline="true"
-                ></video>
+                  active={index === currentIndices[pageIndex]}
+                />
               ) : (
                 <Image
                   src={src}

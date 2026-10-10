@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/footer";
+import LazyVideo from "../components/lazyVideo";
 import { works } from "../data/works";
 
 export const metadata = {
@@ -18,16 +19,7 @@ export default function WorksPage() {
           <li key={src} className="break-inside-avoid mb-10 lg:mb-32">
             <Link href={`/#${pageIndex}`} className="block">
               {src.endsWith(".mp4") ? (
-                <video
-                  src={src}
-                  className="w-full h-auto"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  disablePictureInPicture
-                  preload="metadata"
-                />
+                <LazyVideo src={src} className="w-full h-auto" />
               ) : (
                 // 원본 비율 유지: width/height 0 + w-full h-auto
                 <Image
