@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 // 화면에 보이고(active) 현재 슬라이드일 때만 영상을 내려받아 재생
 // → 페이지를 열 때 모든 영상이 한꺼번에 로딩되어 느려지는 것을 방지
-// 영상이 준비되기 전엔 같은 이름의 .poster.jpg(첫 장면)를 보여줌
-export default function LazyVideo({ src, active = true, className = "" }) {
+// 영상이 준비되기 전엔 poster(첫 장면 이미지, Keystatic에서 지정)를 보여줌
+export default function LazyVideo({ src, poster, active = true, className = "" }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -34,7 +34,7 @@ export default function LazyVideo({ src, active = true, className = "" }) {
       ref={ref}
       className={className}
       src={src}
-      poster={src.replace(/\.mp4$/, ".poster.jpg")}
+      poster={poster ?? undefined}
       loop
       muted
       playsInline

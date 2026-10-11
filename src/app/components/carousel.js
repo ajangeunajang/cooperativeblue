@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { works } from "../data/works";
 import LazyVideo from "./lazyVideo";
 
-export default function Carousel({ className }) {
-  const images = works;
+export default function Carousel({ className, projects }) {
+  // 프로젝트 하나 = 캐러셀 한 화면
+  const images = projects.map((project) => project.media);
 
   // 각 페이지마다 currentIndex를 따로 관리하도록
   const [currentIndices, setCurrentIndices] = useState(
@@ -55,7 +55,7 @@ export default function Carousel({ className }) {
           key={pageIndex}
           className="relative w-full h-screen flex snap-center flex-col"
         >
-          {page.map((src, index) => (
+          {page.map(({ type, url: src, poster }, index) => (
             <div
               key={index}
               className={`absolute w-full h-full flex items-center justify-center transition-opacity ease-in-out ${
@@ -64,17 +64,18 @@ export default function Carousel({ className }) {
                   : "opacity-0"
               }`}
             >
-              {src.endsWith(".mp4") ? (
+              {type === "video" ? (
                 <LazyVideo
                   className="absolute top-0 left-1/2 -translate-x-1/2 max-w-full max-h-full p-4"
                   src={src}
+                  poster={poster}
                   active={index === currentIndices[pageIndex]}
                 />
               ) : (
                 <Image
                   src={src}
                   fill
-                  alt={`swiss-${index}`}
+                  alt={`${projects[pageIndex].title} ${index + 1}`}
                   className="object-contain object-top p-4"
                 />
               )}

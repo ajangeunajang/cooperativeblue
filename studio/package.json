@@ -1,0 +1,19 @@
+{
+  "name": "cooperativeblue-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "(cooperative) Blue 프로젝트 편집 화면 (Sanity Studio)",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/orderable-document-list": "2.0.26",
+    "@sanity/vision": "6.18.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sanity": "6.18.0",
+    "styled-components": "^6.1.15"
+  }
+}
