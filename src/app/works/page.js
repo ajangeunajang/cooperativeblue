@@ -43,7 +43,8 @@ export default async function WorksPage({ searchParams }) {
       <ul className="columns-2 md:columns-3 lg:columns-4 gap-10 lg:gap-32">
         {items.map(({ type, src, poster, width, height, title, slug }) => (
           <li key={src} className="break-inside-avoid mb-10 lg:mb-32">
-            <Link href={`/works/${slug}`} className="block">
+            {/* scroll={false}: 시트가 화면 아래에서 올라오는 동안 목록 스크롤이 움직이지 않게 */}
+            <Link href={`/works/${slug}`} scroll={false} className="block">
               {type === "video" ? (
                 <LazyVideo src={src} poster={poster} width={width} height={height} className="w-full h-auto" />
               ) : (

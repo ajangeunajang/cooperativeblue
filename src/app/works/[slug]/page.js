@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Footer from "../../components/footer";
+import { DetailPageMotion } from "../../components/pageDirection";
 import ProjectDetail from "../../components/projectDetail";
 import { getProject, getProjects } from "../../data/projects";
 
@@ -36,9 +36,8 @@ export default async function ProjectPage({ params }) {
 
   // 주소로 바로 들어오거나 새로고침했을 때의 전체 페이지
   return (
-    <main className="sheet-up min-h-screen px-4 pt-16 lg:pt-20 pb-16 lg:pb-10 text-[0.8rem]">
+    <DetailPageMotion key={slug} className="min-h-screen lg:h-screen overflow-x-hidden lg:overflow-hidden px-4 pt-16 lg:pt-20 pb-16 lg:pb-6 text-[0.8rem]">
       <ProjectDetail {...data} />
-      <Footer inline className="mt-10" />
-    </main>
+    </DetailPageMotion>
   );
 }

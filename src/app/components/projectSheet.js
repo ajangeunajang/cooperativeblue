@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { slideClass, useArrivalDirection } from "./pageDirection";
 
 const SheetContext = createContext(null);
 
@@ -13,6 +14,8 @@ export default function ProjectSheet({ slug, children }) {
   const router = useRouter();
   const pathname = usePathname();
   const [closing, setClosing] = useState(false);
+  // 이전/다음으로 넘어온 경우: 시트는 그대로, 내용만 좌우로
+  const direction = useArrivalDirection();
   const open = pathname === `/works/${slug}`;
   // 시트를 연 순간의 목록 스크롤 위치 (닫은 뒤 되돌리기)
   const listScroll = useRef(typeof window === "undefined" ? 0 : window.scrollY);
@@ -47,16 +50,23 @@ export default function ProjectSheet({ slug, children }) {
     };
   }, [open]);
 
+  // 시트 안에서 이전/다음 프로젝트로 넘기면 시트 내용은 맨 위부터
+  const sheetRef = useRef(null);
+  useEffect(() => {
+    sheetRef.current?.scrollTo(0, 0);
+  }, [slug]);
+
   // 다른 페이지(카테고리 목록 등)로 이동하면 시트는 숨김
   if (!open) return null;
 
   return (
     <SheetContext.Provider value={close}>
       <div
-        className={`fixed inset-0 z-[5] overflow-y-auto bg-[#e9e9e9] ${closing ? "sheet-down" : "sheet-up"}`}
-        onAnimationEnd={() => closing && finishClose()}
+        ref={sheetRef}
+        className={`fixed inset-0 z-[5] overflow-y-auto overflow-x-hidden lg:overflow-hidden bg-[#e9e9e9]/50 backdrop-blur-md ${closing ? "sheet-down" : direction ? "" : "sheet-up"}`}
+        onAnimationEnd={(e) => closing && e.target === e.currentTarget && finishClose()}
       >
-        {children}
+        <div className={`min-h-full lg:h-full ${slideClass(direction)}`}>{children}</div>
       </div>
     </SheetContext.Provider>
   );

@@ -9,8 +9,8 @@ export default async function ProjectSheetPage({ params }) {
   if (!data) return null;
 
   return (
-    <ProjectSheet slug={slug}>
-      <div className="min-h-full px-4 pt-16 lg:pt-20 pb-16 lg:pb-10 text-[0.8rem]">
+    <ProjectSheet key={slug} slug={slug}>
+      <div className="min-h-full lg:h-full px-4 pt-16 lg:pt-20 pb-16 lg:pb-6 text-[0.8rem]">
         <ProjectDetail {...data} inSheet />
       </div>
     </ProjectSheet>

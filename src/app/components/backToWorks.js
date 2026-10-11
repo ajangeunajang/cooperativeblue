@@ -8,7 +8,7 @@ export default function BackToWorks({ className = "" }) {
   const closeSheet = useSheet();
   const label = (
     <>
-      <span className="font-[Inter]">←</span> Works
+      <span className="font-[Inter]">←</span> Back
     </>
   );
   return closeSheet ? (

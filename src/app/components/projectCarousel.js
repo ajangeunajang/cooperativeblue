@@ -21,8 +21,8 @@ export default function ProjectCarousel({ media, title }) {
   }, [count]);
 
   return (
-    <div>
-      <div className="relative w-full h-[70vh] lg:h-[calc(100vh-8rem)]">
+    <div className="lg:h-full lg:flex lg:flex-col">
+      <div className="relative w-full h-[70vh] lg:h-auto lg:flex-1 lg:min-h-0">
         {media.map((m, index) => (
           <div
             key={m.url}

@@ -79,7 +79,30 @@ input:-webkit-autofill:focus {
   }
 }
 
+/* 상세 페이지 이전/다음: 좌우로 넘어감 */
+.slide-from-right {
+  animation: slide-from-right 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.slide-from-left {
+  animation: slide-from-left 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-100vw);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .slide-from-right,
+  .slide-from-left,
   .sheet-up,
   .sheet-down {
     animation-duration: 1ms;
