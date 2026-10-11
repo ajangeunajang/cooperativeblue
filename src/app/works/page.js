@@ -9,15 +9,18 @@ export const metadata = {
 };
 
 export default async function WorksPage() {
-  // 프로젝트마다 첫 이미지(대표 이미지)만, 누르면 메인 화면의 해당 프로젝트로 이동
+  // 프로젝트마다 'Works에 보이기'를 체크한 미디어(없으면 첫 번째), 누르면 메인 화면의 해당 프로젝트로 이동
   const projects = await getProjects();
-  const items = projects.map((project, pageIndex) => ({
-    type: project.media[0].type,
-    src: project.media[0].url,
-    poster: project.media[0].poster,
-    title: project.title,
-    pageIndex,
-  }));
+  const items = projects.flatMap((project, pageIndex) => {
+    const featured = project.media.filter((m) => m.featured);
+    return (featured.length ? featured : [project.media[0]]).map((m) => ({
+      type: m.type,
+      src: m.url,
+      poster: m.poster,
+      title: project.title,
+      pageIndex,
+    }));
+  });
 
   return (
     <main className="min-h-screen px-4 pt-16 lg:pt-20 pb-16 lg:pb-10">

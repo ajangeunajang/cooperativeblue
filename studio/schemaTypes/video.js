@@ -19,12 +19,13 @@ export const video = defineType({
       description: "영상이 뜨기 전에 보여줄 첫 장면 이미지 (Works 썸네일로도 사용)",
       type: "image",
     }),
+    defineField({ name: "featured", title: "Works에 보이기", type: "boolean", initialValue: false }),
   ],
   preview: {
-    select: { poster: "poster", filename: "file.asset.originalFilename" },
-    prepare: ({ poster, filename }) => ({
+    select: { poster: "poster", filename: "file.asset.originalFilename", featured: "featured" },
+    prepare: ({ poster, filename, featured }) => ({
       title: filename ?? "Video",
-      subtitle: "Video",
+      subtitle: featured ? "Video · Works" : "Video",
       media: poster,
     }),
   },

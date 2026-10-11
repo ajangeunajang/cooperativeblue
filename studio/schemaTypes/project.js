@@ -23,7 +23,34 @@ export const project = defineType({
       options: { source: "title" },
       validation: (rule) => rule.required(),
     }),
-    defineField({ name: "client", title: "Client", type: "string" }),
+    defineField({
+      name: "kind",
+      title: "Type",
+      type: "string",
+      options: {
+        layout: "radio",
+        direction: "horizontal",
+        list: [
+          { title: "Client work", value: "client" },
+          { title: "Personal work", value: "personal" },
+          { title: "Exhibition", value: "exhibition" },
+        ],
+      },
+      initialValue: "client",
+    }),
+    defineField({
+      name: "client",
+      title: "Client",
+      type: "string",
+      hidden: ({ document }) => document?.kind !== "client",
+    }),
+    defineField({
+      name: "exhibition",
+      title: "Exhibition / Venue",
+      description: "전시명, 장소 등",
+      type: "string",
+      hidden: ({ document }) => document?.kind !== "exhibition",
+    }),
     defineField({ name: "year", title: "Year", type: "number" }),
     defineField({
       name: "category",
@@ -48,11 +75,17 @@ export const project = defineType({
     defineField({
       name: "media",
       title: "Media",
-      description: "썸네일을 끌어서 순서 변경. 첫 번째가 Works 대표 이미지",
+      description: "썸네일을 끌어서 순서 변경. 'Works에 보이기'를 체크한 항목이 Works에 나옴 (없으면 첫 번째)",
       type: "array",
       options: { layout: "grid" },
       of: [
-        defineArrayMember({ type: "image", title: "Image" }),
+        defineArrayMember({
+          type: "image",
+          title: "Image",
+          fields: [
+            defineField({ name: "featured", title: "Works에 보이기", type: "boolean", initialValue: false }),
+          ],
+        }),
         defineArrayMember({ type: "video" }),
       ],
       validation: (rule) => rule.required().min(1),
@@ -61,14 +94,21 @@ export const project = defineType({
   preview: {
     select: {
       title: "title",
+      kind: "kind",
       client: "client",
+      exhibition: "exhibition",
       year: "year",
       first: "media.0",
       firstPoster: "media.0.poster",
     },
-    prepare: ({ title, client, year, first, firstPoster }) => ({
+    prepare: ({ title, kind, client, exhibition, year, first, firstPoster }) => ({
       title,
-      subtitle: [client, year].filter(Boolean).join(" · "),
+      subtitle: [
+        { client, personal: "Personal", exhibition: exhibition || "Exhibition" }[kind] ?? client,
+        year,
+      ]
+        .filter(Boolean)
+        .join(" · "),
       media: first?._type === "video" ? firstPoster : first,
     }),
   },

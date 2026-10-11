@@ -16,7 +16,8 @@ const QUERY = `*[_type == "project" && defined(slug.current)] | order(orderRank)
   "media": media[] {
     "type": _type,
     "url": select(_type == "video" => file.asset->url, asset->url),
-    "poster": poster.asset->url
+    "poster": poster.asset->url,
+    "featured": featured == true
   }
 }`;
 
