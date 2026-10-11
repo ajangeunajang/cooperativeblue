@@ -65,7 +65,9 @@ export default function ContactForm({ className = "", draggable = false, open })
   // 회전(slow-spin)과 겹치지 않도록 이동은 바깥 래퍼에 적용
   const wrap = (content) =>
     draggable ? (
-      <div style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}>{content}</div>
+      <div className="pointer-events-auto" style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}>
+        {content}
+      </div>
     ) : (
       content
     );

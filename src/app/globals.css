@@ -57,6 +57,35 @@ input:-webkit-autofill:focus {
   }
 }
 
+/* 프로젝트 상세 페이지: 아래에서 시트처럼 올라오며 열림 */
+.sheet-up {
+  animation: sheet-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100vh);
+  }
+}
+
+/* 시트 닫기: 아래로 내려감 */
+.sheet-down {
+  animation: sheet-down 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes sheet-down {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-up,
+  .sheet-down {
+    animation-duration: 1ms;
+  }
+}
+
 .cursor-arrow-left {
   cursor: url('/img/left.png') 10 8, pointer;
   cursor: image-set(url('/img/left.png') 1x, url('/img/left@2x.png') 2x) 10 8, pointer;
